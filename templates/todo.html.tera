@@ -1,4 +1,4 @@
 {% extends "base" %}
 {% block content %}
-<h1>main page: {{ val }}!</h1>
+<h1>todo: {{ page }}</h1>
 {% endblock content %}
