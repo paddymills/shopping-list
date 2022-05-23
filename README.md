@@ -8,3 +8,4 @@ shopping list and pantry inventory app
 - filtering/sorting
 - item edit
 - stores edit
+- better favicon
