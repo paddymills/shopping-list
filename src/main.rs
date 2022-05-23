@@ -6,7 +6,7 @@ use rocket::{
     fs::FileServer
 };
 
-use shopping_list::list;
+use shopping_list::{ShoppingList, SubRoute};
 
 #[derive(Deserialize, Serialize)]
 #[serde(crate = "rocket::serde")]
@@ -28,7 +28,7 @@ fn not_found() -> Template {
 fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![index])
-        .mount("/list", list::routes())
+        .mount("/list", ShoppingList::routes())
         .mount("/public", FileServer::from("static/"))
         .register("/", catchers![not_found])
         .attach(Template::fairing())

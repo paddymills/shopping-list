@@ -1,6 +1,8 @@
 
 use rocket_dyn_templates::{Template, context};
 
+use crate::SubRoute;
+
 #[allow(dead_code)]
 struct ListItem {
     checked: bool,
@@ -8,6 +10,8 @@ struct ListItem {
     qty: i32,
     store: String
 }
+
+pub struct ShoppingList { }
 
 #[get("/")]
 fn main() -> Template {
@@ -19,6 +23,8 @@ fn items() -> Template {
     Template::render("list/items", context! { items: vec!["apples", "oranges", "eggs"] })
 }
 
-pub fn routes() -> Vec<rocket::Route> {
-    routes![main, items]
+impl SubRoute for ShoppingList {
+    fn routes() -> Vec<rocket::Route> {
+        routes![main, items]
+    }
 }
