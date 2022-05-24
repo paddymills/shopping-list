@@ -1,5 +1,18 @@
-{% for item in items %}
-<ul>
-    <li>{{ item }}</li>
-</ul>
-{% endfor %}
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Store</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in items %}
+        <tr>
+            <td>-</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.store }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
