@@ -1,15 +1,12 @@
 #[macro_use] extern crate rocket;
 
 use rocket_dyn_templates::{Template, context};
-use rocket::{
-    serde::{Serialize, Deserialize},
-    fs::FileServer
-};
+use rocket::fs::FileServer;
+use serde::{Serialize, Deserialize};
 
 use shopping_list::{ShoppingList, SubRoute};
 
 #[derive(Deserialize, Serialize)]
-#[serde(crate = "rocket::serde")]
 struct Ctx<'r> {
     val: &'r str
 }
