@@ -1,4 +1,10 @@
 {% extends "base" %}
+
+{% block css %}
+{{ super() }}
+<link defer rel="stylesheet" href="/public/list.css" />
+{% endblock %}
+
 {% block content %}
 <h1>Shopping List</h1>
 <section hx-get="/list/items" hx-trigger="load"></section>

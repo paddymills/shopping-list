@@ -1,4 +1,5 @@
 {% extends "base" %}
 {% block content %}
 <h1>main page: {{ val }}!</h1>
+<a href="/list">List</a>
 {% endblock content %}
