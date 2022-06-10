@@ -3,9 +3,11 @@
 {% block css %}
 {{ super() }}
 <link defer rel="stylesheet" href="/public/list.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock %}
 
 {% block content %}
 <h1>Shopping List</h1>
+<i class="fa fa-search"></i>
 <section hx-get="/list/items" hx-trigger="load"></section>
 {% endblock content %}

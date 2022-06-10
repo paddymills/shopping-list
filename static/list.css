@@ -1,5 +1,15 @@
-li {
-    decoration: none;
-    border: 1px solid black;
+table {
+    padding: 1em;
+    border: 0.25em solid black;
     border-radius: 1em;
+    border-spacing: 0;
+}
+
+th {
+    border-bottom: 1px solid black;
+}
+
+th, td {
+    padding-left: 1em;
+    padding-right: 1em;
 }
