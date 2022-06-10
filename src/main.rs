@@ -1,10 +1,11 @@
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 
 use rocket_dyn_templates::{Template, context};
 use rocket::fs::FileServer;
 use serde::{Serialize, Deserialize};
 
-use shopping_list::{ShoppingList, SubRoute};
+use shopping_list::{ShoppingList, Todo, SubRoute};
 
 #[derive(Deserialize, Serialize)]
 struct Ctx<'r> {
@@ -26,6 +27,7 @@ fn rocket() -> _ {
     rocket::build()
         .mount("/", routes![index])
         .mount("/list", ShoppingList::routes())
+        .mount("/todo", Todo::routes())
         .mount("/public", FileServer::from("static/"))
         .register("/", catchers![not_found])
         .attach(Template::fairing())

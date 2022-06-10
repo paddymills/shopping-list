@@ -1,0 +1,12 @@
+<ul style="list-style-type: none;">
+    {% for item in items %}
+    <li>
+        {% if item.checked == true %}
+            <input type="checkbox" id="todo-{{ item.id }}" checked>
+        {% else %}
+            <input type="checkbox" id="todo-{{ item.id }}">
+        {% endif %}
+        <label for="todo-{{ item.id }}">{{ item.text }}</label>
+    </li>
+    {% endfor %}
+</ul>
