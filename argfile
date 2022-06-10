@@ -1,0 +1,7 @@
+--restart
+--watch
+src
+--exts
+rs
+cargo
+run
